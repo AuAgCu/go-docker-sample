@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  go:
+    build: ./go
+    command: air -c .air.toml
+    volumes:
+      - ./go:/go_api
+    working_dir: /go_api
+    ports:
+      - "8080:8080"
+    environment:
+      BACKEND_PORT: 8080
+      GOPATH: /go
+      
